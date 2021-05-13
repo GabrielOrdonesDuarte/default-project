@@ -1,26 +1,29 @@
-import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import Menu from '../components/Menu/Menu';
+import Container from '../components/Container/Container';
+import GridItem from '../components/GridItem/GridItem';
 
 const Home: any = () => {
-  const [session] = useSession();
-
   return (
     <>
-      <Link href="/pagina1">Ir para pagina 1</Link>
-      <br />
-      <br />
-      {!session && (
-        <>
-          Not signed in <br />
-          <button onClick={() => signIn('auth0')}>Sign in</button>
-        </>
-      )}
-      {session && (
-        <>
-          Signed in as {session.user.email} <br />
-          <button onClick={() => signOut()}>Sign out</button>
-        </>
-      )}
+      <Menu />
+      <Container>
+        <GridItem xs={12} md={6}>
+          <h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
+            provident possimus harum ut non distinctio consequuntur id
+            architecto culpa consectetur recusandae, pariatur et reiciendis
+            vitae aut enim veniam adipisci ipsam?
+          </h1>
+        </GridItem>
+        <GridItem xs={12} md={6}>
+          <h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
+            provident possimus harum ut non distinctio consequuntur id
+            architecto culpa consectetur recusandae, pariatur et reiciendis
+            vitae aut enim veniam adipisci ipsam?
+          </h1>
+        </GridItem>
+      </Container>
     </>
   );
 };

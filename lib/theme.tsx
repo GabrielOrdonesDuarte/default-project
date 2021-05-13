@@ -4,12 +4,12 @@ import {} from './util/interfaces';
 const theme = createMuiTheme({
   overrides: {
     // resolucao do bug de overflow no componente 'Grid'
-    MuiGrid: {
-      container: {
-        width: '100% !important',
-        margin: '0 !important',
-      },
-    },
+    // MuiGrid: {
+    //   container: {
+    //     width: '100% !important',
+    //     margin: '0 !important',
+    //   },
+    // },
     //
     MuiTypography: {
       h1: {
@@ -35,8 +35,8 @@ const theme = createMuiTheme({
       corMarrom: '#DEB887',
     },
     text: {
-      primary: '#5c6ac4',
-      secondary: '#19f719',
+      primary: 'rgb(45, 55, 72)',
+      secondary: 'rgb(100, 110, 115)',
     },
   },
   typography: {

@@ -1,22 +1,24 @@
-import { Grid, makeStyles } from '@material-ui/core';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Grid, Box } from '@material-ui/core';
 
-const marginContainer = 5;
+const Container: any = ({ children, ...rest }) => (
+  <Box
+    maxWidth={{ sm: 720, md: 1236 }}
+    width={'100%'}
+    margin={'0 auto'}
+    paddingX={2}
+    paddingY={{ xs: 4, sm: 6, md: 8 }}
+    {...rest}
+  >
+    <Grid container spacing={8}>
+      {children}
+    </Grid>
+  </Box>
+);
 
-const Container: any = (props: any) => {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <Grid container spacing={marginContainer} {...props}>
-        {props.children}
-      </Grid>
-    </div>
-  );
+Container.propTypes = {
+  children: PropTypes.node.isRequired,
 };
-
-const useStyles = makeStyles(() => ({
-  root: {
-    flexGrow: 1,
-  },
-}));
 
 export default Container;
